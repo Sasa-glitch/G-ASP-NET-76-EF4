@@ -15,6 +15,7 @@ namespace Assignment4.Configurations
         {
             builder.HasKey(e => e.Code);
             builder.ComplexProperty(e => e.BranchManager);
+            
         }
     }
 }

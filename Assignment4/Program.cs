@@ -1,10 +1,35 @@
-﻿namespace Assignment4
+﻿using Assignment4.Contexts;
+using Assignment4.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace Assignment4
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var _context =  new AppDbContext();
+            if (!await _context.Branches.AnyAsync()) 
+            {
+                _context.Branches.AddRange(
+                     new Branch()
+                     {
+                         Address = "Bikini bottom st 13",
+                         Name = "Krusty Krab",
+                         PhoneNumber = "010",
+                         BranchManager = new Manager() { Email = "spongbob@gmail.com", FullName = "Spongbob squre pants", HireDate = new DateOnly(), ManagerId = 1, ManagerPhoneNumber = "011" }
+                     },
+                    new Branch()
+                    {
+                        Address = "NoIdea st 67",
+                        Name = "Samurai Jack",
+                        PhoneNumber = "206-826-4480",
+                        BranchManager = new Manager() { Email = "salahmosh@gmail.com", FullName = "Sal el salo", HireDate = new DateOnly(), ManagerId = 2, ManagerPhoneNumber = "206-902-1100" }
+                    }
+                );
+
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

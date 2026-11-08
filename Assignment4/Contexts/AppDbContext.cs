@@ -13,7 +13,7 @@ namespace Assignment4.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = .; database = LearningPlatfrom; Trusted_Connection = true; TrustServerCertificate = true ;");
+            optionsBuilder.UseSqlServer("server = .; database = NationalBank; Trusted_Connection = true; TrustServerCertificate = true ;");
         }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Branch> Branches { get; set; }

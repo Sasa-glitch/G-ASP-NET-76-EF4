@@ -165,29 +165,6 @@ namespace Assignment4.Migrations
                     b.ToTable("CustomersAccount");
                 });
 
-            modelBuilder.Entity("Assignment4.Models.Manager", b =>
-                {
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateOnly>("HireDate")
-                        .HasColumnType("date");
-
-                    b.Property<int>("ManagerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ManagerPhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("Manager");
-                });
-
             modelBuilder.Entity("Assignment4.Models.Transaction", b =>
                 {
                     b.Property<int>("TransactionNumber")
