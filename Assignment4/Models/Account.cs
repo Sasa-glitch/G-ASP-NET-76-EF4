@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Assignment4.Models
         [Key]
         public int AccountNumber { get; set; }
         public decimal CurrentBalance { get; set; }
-        public string AccountType { get; set; }
+        public int AccountType { get; set; }
         public DateTime OpeningDate { get; set; }
         public Branch AccountsBranch { get; set; }
         public int AccountsBranchId { get; set; }

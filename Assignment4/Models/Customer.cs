@@ -14,7 +14,7 @@ namespace Assignment4.Models
         public string FullName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public string CustomerType { get; set; }
+        public int CustomerType { get; set; }
         public string NationalId { get; set; }
         public CustomerAccount[] AccountsCustomerHave {  get; set; }
     }

@@ -1,5 +1,7 @@
 ﻿using Assignment4.Contexts;
+using Assignment4.Helpers;
 using Assignment4.Models;
+using Assignment4.Ops;
 using Microsoft.EntityFrameworkCore;
 
 namespace Assignment4
@@ -8,7 +10,7 @@ namespace Assignment4
     {
         static async Task Main(string[] args)
         {
-            var _context =  new AppDbContext();
+            using var _context =  new AppDbContext();
             if (!await _context.Branches.AnyAsync()) 
             {
                 _context.Branches.AddRange(
@@ -30,6 +32,18 @@ namespace Assignment4
 
                 await _context.SaveChangesAsync();
             }
+
+            #region Showing menu options
+            HelperClass.MenuOptions();
+            int option = HelperClass.GetInt();
+            #endregion
+
+            #region Run the code based on the option
+            if (option == 1)
+                await AddCx.Run();
+            if (option == 2)
+                await AddAccount.Run();
+            #endregion
         }
     }
 }

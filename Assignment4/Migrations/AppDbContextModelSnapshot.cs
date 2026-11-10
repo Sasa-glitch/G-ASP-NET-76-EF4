@@ -31,9 +31,8 @@ namespace Assignment4.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountNumber"));
 
-                    b.Property<string>("AccountType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("AccountType")
+                        .HasColumnType("int");
 
                     b.Property<int>("AccountsBranchId")
                         .HasColumnType("int");
@@ -48,7 +47,7 @@ namespace Assignment4.Migrations
 
                     b.HasIndex("AccountsBranchId");
 
-                    b.ToTable("Accounts");
+                    b.ToTable("Accounts", (string)null);
                 });
 
             modelBuilder.Entity("Assignment4.Models.Branch", b =>
@@ -96,7 +95,7 @@ namespace Assignment4.Migrations
 
                     b.HasKey("Code");
 
-                    b.ToTable("Branches");
+                    b.ToTable("Branches", (string)null);
                 });
 
             modelBuilder.Entity("Assignment4.Models.Customer", b =>
@@ -111,9 +110,8 @@ namespace Assignment4.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CustomerType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CustomerType")
+                        .HasColumnType("int");
 
                     b.Property<DateOnly>("DateOfBirth")
                         .HasColumnType("date");
@@ -136,7 +134,7 @@ namespace Assignment4.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("Assignment4.Models.CustomerAccount", b =>
@@ -162,7 +160,7 @@ namespace Assignment4.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("CustomersAccount");
+                    b.ToTable("CustomersAccount", (string)null);
                 });
 
             modelBuilder.Entity("Assignment4.Models.Transaction", b =>
@@ -194,7 +192,7 @@ namespace Assignment4.Migrations
 
                     b.HasIndex("AccountId");
 
-                    b.ToTable("Transactions");
+                    b.ToTable("Transactions", (string)null);
                 });
 
             modelBuilder.Entity("Assignment4.Models.Account", b =>
