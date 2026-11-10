@@ -45,6 +45,8 @@ namespace Assignment4
                 await AddAccount.Run();
             else if (option == 3)
                 await UpdateAccState.Run();
+            else if (option == 4)
+                await RemoveCxAccLink.Run();
             #endregion
         }
     }
