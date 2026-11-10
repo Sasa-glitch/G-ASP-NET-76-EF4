@@ -41,8 +41,10 @@ namespace Assignment4
             #region Run the code based on the option
             if (option == 1)
                 await AddCx.Run();
-            if (option == 2)
+            else if (option == 2)
                 await AddAccount.Run();
+            else if (option == 3)
+                await UpdateAccState.Run();
             #endregion
         }
     }

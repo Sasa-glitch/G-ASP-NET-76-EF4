@@ -86,7 +86,7 @@ namespace Assignment4.Ops
             while (true)
             {
                 ownRole = HelperClass.GetInt();
-                if (ownRole == 0 || ownRole == 1)
+                if (ownRole == 1 || ownRole == 2)
                     break;
                 else
                     Console.WriteLine("Just choice 1 or 2 please... stop being like this!!!");
