@@ -33,23 +33,36 @@ namespace Assignment4
                 await _context.SaveChangesAsync();
             }
 
-            #region Showing menu options
-            HelperClass.MenuOptions();
-            int option = HelperClass.GetInt();
-            #endregion
+            while (true)
+            { 
+                #region Showing menu options
+                HelperClass.MenuOptions();
+                int option = HelperClass.GetInt();
+                #endregion
 
-            #region Run the code based on the option
-            if (option == 1)
-                await AddCx.Run();
-            else if (option == 2)
-                await AddAccount.Run();
-            else if (option == 3)
-                await UpdateAccState.Run();
-            else if (option == 4)
-                await RemoveCxAccLink.Run();
-            else if (option == 5)
-                GetCxDetails.Run();
-            #endregion
+                #region Run the code based on the option
+                if (option == 1)
+                    await AddCx.Run();
+                else if (option == 2)
+                    await AddAccount.Run();
+                else if (option == 3)
+                    await UpdateAccState.Run();
+                else if (option == 4)
+                    await RemoveCxAccLink.Run();
+                else if (option == 5)
+                    GetCxDetails.Run();
+                else if (option == 0)
+                    Console.WriteLine("No action it is boss");
+                else
+                    Console.WriteLine("Invalid option");
+                #endregion
+
+                #region Show the return to menu option thing
+                Console.WriteLine("Press any key to get back to the menu...");
+                Console.ReadKey(true);
+                Console.Clear();
+                #endregion
+            }
         }
     }
 }
