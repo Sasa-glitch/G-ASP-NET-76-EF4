@@ -17,7 +17,7 @@ namespace Assignment4.Models
         public DateTime OpeningDate { get; set; }
         public Branch AccountsBranch { get; set; }
         public int AccountsBranchId { get; set; }
-        public Transaction[] Transactions { get; set; }
-        public CustomerAccount[] CustomersHavingTheAccount { get; set; }
+        public List<Transaction> Transactions { get; set; } = new();
+        public List<CustomerAccount> CustomersHavingTheAccount { get; set; } = new();
     }
 }

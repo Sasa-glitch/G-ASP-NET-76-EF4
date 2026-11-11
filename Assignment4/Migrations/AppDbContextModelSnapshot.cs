@@ -47,7 +47,7 @@ namespace Assignment4.Migrations
 
                     b.HasIndex("AccountsBranchId");
 
-                    b.ToTable("Accounts", (string)null);
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("Assignment4.Models.Branch", b =>
@@ -95,7 +95,7 @@ namespace Assignment4.Migrations
 
                     b.HasKey("Code");
 
-                    b.ToTable("Branches", (string)null);
+                    b.ToTable("Branches");
                 });
 
             modelBuilder.Entity("Assignment4.Models.Customer", b =>
@@ -134,7 +134,7 @@ namespace Assignment4.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Assignment4.Models.CustomerAccount", b =>
@@ -160,7 +160,7 @@ namespace Assignment4.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("CustomersAccount", (string)null);
+                    b.ToTable("CustomersAccount");
                 });
 
             modelBuilder.Entity("Assignment4.Models.Transaction", b =>
@@ -192,7 +192,7 @@ namespace Assignment4.Migrations
 
                     b.HasIndex("AccountId");
 
-                    b.ToTable("Transactions", (string)null);
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Assignment4.Models.Account", b =>

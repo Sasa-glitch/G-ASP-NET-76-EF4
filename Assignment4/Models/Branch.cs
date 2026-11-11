@@ -14,6 +14,6 @@ namespace Assignment4.Models
         public string PhoneNumber { get; set; }
         public Manager BranchManager { get; set; }
 
-        public Account[] Accounts { get; set; }
+        public List<Account> Accounts { get; set; } = new();
     }
 }

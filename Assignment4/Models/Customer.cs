@@ -16,6 +16,6 @@ namespace Assignment4.Models
         public string PhoneNumber { get; set; }
         public int CustomerType { get; set; }
         public string NationalId { get; set; }
-        public CustomerAccount[] AccountsCustomerHave {  get; set; }
+        public List<CustomerAccount> AccountsCustomerHave { get; set; } = new();
     }
 }
